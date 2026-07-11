@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy · Gmail Label &amp; Filter MCP</title>
+<style>
+  :root {
+    --bg:#ffffff; --fg:#1a1a1a; --muted:#5a5a5a; --border:#e3e5e9; --accent:#2b6cb0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0f1115; --fg:#e8eaed; --muted:#9aa0a6; --border:#262a33; --accent:#6ea8fe; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  .wrap { max-width:760px; margin:0 auto; padding:56px 24px 80px; }
+  h1 { font-size:1.9rem; margin:0 0 6px; letter-spacing:-.02em; }
+  .updated { color:var(--muted); font-size:14px; margin:0 0 32px; }
+  h2 { font-size:1.1rem; margin:32px 0 8px; }
+  p, li { color:var(--fg); }
+  ul { padding-left:20px; }
+  li { margin:6px 0; }
+  code { background:var(--border); border-radius:6px; padding:1px 6px; font-size:.9em; }
+  a { color:var(--accent); }
+  footer { margin-top:48px; padding-top:20px; border-top:1px solid var(--border); color:var(--muted); font-size:14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Privacy Policy</h1>
+  <p class="updated">Gmail Label &amp; Filter MCP · Last updated 10 July 2026</p>
+
+  <p>Gmail Label &amp; Filter MCP (&ldquo;the app&rdquo;) is a personal, open-source Model Context Protocol server run by its author on their own computer to manage their own Gmail account. This policy explains how it handles Google user data.</p>
+
+  <h2>Who this covers</h2>
+  <p>The app is a single-user, self-hosted tool. It has no other users, no backend service, and no shared infrastructure. The only Google account it accesses is the author's own.</p>
+
+  <h2>Google data the app accesses</h2>
+  <p>Using the following Gmail OAuth scopes, the app accesses only data needed to manage labels, filters, and inbox rules:</p>
+  <ul>
+    <li><code>gmail.labels</code> — Gmail labels</li>
+    <li><code>gmail.modify</code> — applying and removing labels on messages and threads</li>
+    <li><code>gmail.settings.basic</code> — Gmail filters and basic settings</li>
+  </ul>
+  <p>The app does not request full-mailbox access and does not read the content of email messages. It reads only message metadata and short snippets when needed to preview the effect of a rule.</p>
+
+  <h2>How data is used</h2>
+  <p>Data is used solely to perform the label, filter, and rule operations the author explicitly requests. It is not used for advertising, analytics, profiling, or any secondary purpose.</p>
+
+  <h2>Storage and sharing</h2>
+  <ul>
+    <li>OAuth tokens are stored <strong>encrypted on the author's local machine</strong> and never transmitted anywhere except directly to Google's official APIs.</li>
+    <li>No Gmail data is stored on any server or shared with any third party.</li>
+    <li>The app does not sell, rent, or transfer any Google user data. Its use of Google data complies with the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</li>
+  </ul>
+
+  <h2>Data retention and deletion</h2>
+  <p>The app keeps no copy of Gmail content. The only persisted item is the encrypted OAuth token on the author's computer, which can be deleted at any time by removing the local token file, and access can be revoked at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p>
+
+  <h2>Contact</h2>
+  <p>This is a personal, single-user application. Questions about this policy can be raised through the project's <a href="https://github.com/darrenbkl/gmail-mcp/issues">GitHub issues page</a>. Access can be revoked at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p>
+
+  <footer>
+    <a href="index.html">← Back to home</a>
+  </footer>
+</div>
+</body>
+</html>

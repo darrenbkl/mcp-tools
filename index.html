@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gmail Label &amp; Filter MCP</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1a1a1a; --muted: #5a5a5a;
+    --card: #f6f7f9; --border: #e3e5e9; --accent: #2b6cb0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0f1115; --fg:#e8eaed; --muted:#9aa0a6; --card:#171a21; --border:#262a33; --accent:#6ea8fe; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; }
+  header { margin-bottom: 40px; }
+  .badge { display:inline-block; font-size:13px; color:var(--accent);
+    border:1px solid var(--border); border-radius:999px; padding:4px 12px; margin-bottom:20px; }
+  h1 { font-size: 2rem; margin: 0 0 10px; letter-spacing:-.02em; }
+  .lede { font-size: 1.15rem; color: var(--muted); margin: 0; }
+  h2 { font-size: 1.15rem; margin: 40px 0 12px; }
+  ul { padding-left: 20px; margin: 0; }
+  li { margin: 6px 0; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:20px 22px; margin-top:16px; }
+  .scopes code { background:var(--bg); border:1px solid var(--border); border-radius:6px; padding:1px 6px; font-size:.9em; }
+  a { color: var(--accent); }
+  footer { margin-top:56px; padding-top:20px; border-top:1px solid var(--border); color:var(--muted); font-size:14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="badge">Personal · Local MCP server</span>
+    <h1>Gmail Label &amp; Filter MCP</h1>
+    <p class="lede">A private, locally-run tool for safely organizing one Gmail account — its labels, filters, and inbox rules.</p>
+  </header>
+
+  <p>Gmail Label &amp; Filter MCP is a personal <a href="https://modelcontextprotocol.io">Model Context Protocol</a> server that its author runs on their own computer to manage their own Gmail account. It is not a hosted service, has no other users, and stores no data on any server.</p>
+
+  <h2>What it does</h2>
+  <ul>
+    <li>List, create, update, and delete Gmail <strong>labels</strong></li>
+    <li>List, create, replace, and delete Gmail <strong>filters</strong></li>
+    <li>Apply and remove labels on messages and threads</li>
+    <li>Preview and apply semantic inbox <strong>rules</strong></li>
+  </ul>
+
+  <h2>How it uses Google data</h2>
+  <div class="card scopes">
+    <p style="margin-top:0">It requests only the minimum Gmail scopes needed to manage labels, filters, and settings:</p>
+    <ul>
+      <li><code>gmail.labels</code> — read and manage labels</li>
+      <li><code>gmail.modify</code> — apply/remove labels on mail</li>
+      <li><code>gmail.settings.basic</code> — read and manage filters</li>
+    </ul>
+    <p style="margin-bottom:0">It does <strong>not</strong> request full-mailbox access (<code>https://mail.google.com/</code>) and does not read message bodies — only metadata and short snippets needed to preview a rule.</p>
+  </div>
+
+  <h2>Safety</h2>
+  <ul>
+    <li>Mutating actions default to a dry-run preview</li>
+    <li>Destructive actions require an explicit, single-use confirmation token</li>
+    <li>OAuth tokens are stored encrypted on the author's own machine</li>
+  </ul>
+
+  <footer>
+    See the <a href="privacy.html">Privacy Policy</a> for how data is handled.
+  </footer>
+</div>
+</body>
+</html>
