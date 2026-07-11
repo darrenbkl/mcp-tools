@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gmail Label &amp; Filter MCP</title>
+<title>Personal MCP Tools</title>
 <style>
   :root {
     --bg: #ffffff; --fg: #1a1a1a; --muted: #5a5a5a;
@@ -25,6 +25,9 @@
   ul { padding-left: 20px; margin: 0; }
   li { margin: 6px 0; }
   .card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:20px 22px; margin-top:16px; }
+  .tool { border-left:3px solid var(--accent); padding-left:14px; margin:16px 0; }
+  .tool h3 { margin:0 0 4px; font-size:1rem; }
+  .tool p { margin:0; color:var(--muted); font-size:.95rem; }
   .scopes code { background:var(--bg); border:1px solid var(--border); border-radius:6px; padding:1px 6px; font-size:.9em; }
   a { color: var(--accent); }
   footer { margin-top:56px; padding-top:20px; border-top:1px solid var(--border); color:var(--muted); font-size:14px; }
@@ -33,30 +36,29 @@
 <body>
 <div class="wrap">
   <header>
-    <span class="badge">Personal · Local MCP server</span>
-    <h1>Gmail Label &amp; Filter MCP</h1>
-    <p class="lede">A private, locally-run tool for safely organizing one Gmail account — its labels, filters, and inbox rules.</p>
+    <span class="badge">Personal · Local MCP servers</span>
+    <h1>Personal MCP Tools</h1>
+    <p class="lede">A private collection of locally-run Model Context Protocol servers the author uses to work with their own Google account.</p>
   </header>
 
-  <p>Gmail Label &amp; Filter MCP is a personal <a href="https://modelcontextprotocol.io">Model Context Protocol</a> server that its author runs on their own computer to manage their own Gmail account. It is not a hosted service, has no other users, and stores no data on any server.</p>
+  <p>Personal MCP Tools is a set of personal <a href="https://modelcontextprotocol.io">Model Context Protocol</a> servers that their author runs on their own computer, for their own single Google account. It is not a hosted service, has no other users, and stores no data on any server.</p>
 
-  <h2>What it does</h2>
-  <ul>
-    <li>List, create, update, and delete Gmail <strong>labels</strong></li>
-    <li>List, create, replace, and delete Gmail <strong>filters</strong></li>
-    <li>Apply and remove labels on messages and threads</li>
-    <li>Preview and apply semantic inbox <strong>rules</strong></li>
-  </ul>
+  <h2>Tools in this collection</h2>
+  <div class="tool">
+    <h3>Gmail Label &amp; Filter MCP</h3>
+    <p>Safely manage the author's Gmail labels, filters, and inbox rules — no reading of message bodies.</p>
+  </div>
+  <p style="color:var(--muted);font-size:.95rem">Additional personal tools for other Google services may be added over time; each requests only the minimum scopes it needs.</p>
 
   <h2>How it uses Google data</h2>
   <div class="card scopes">
-    <p style="margin-top:0">It requests only the minimum Gmail scopes needed to manage labels, filters, and settings:</p>
+    <p style="margin-top:0">Each tool requests only the minimum Google scopes needed for its purpose. The scopes currently in use are:</p>
     <ul>
-      <li><code>gmail.labels</code> — read and manage labels</li>
+      <li><code>gmail.labels</code> — read and manage Gmail labels</li>
       <li><code>gmail.modify</code> — apply/remove labels on mail</li>
-      <li><code>gmail.settings.basic</code> — read and manage filters</li>
+      <li><code>gmail.settings.basic</code> — read and manage Gmail filters</li>
     </ul>
-    <p style="margin-bottom:0">It does <strong>not</strong> request full-mailbox access (<code>https://mail.google.com/</code>) and does not read message bodies — only metadata and short snippets needed to preview a rule.</p>
+    <p style="margin-bottom:0">These tools do <strong>not</strong> request full-mailbox access (<code>https://mail.google.com/</code>) and do not read message bodies — only the metadata and short snippets needed to preview an action.</p>
   </div>
 
   <h2>Safety</h2>
